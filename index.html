@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RENFLAMME - Handcrafted Candles</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -27,10 +28,10 @@
     </ul>
 
     <div class="nav-icons">
-      <button class="icon-btn" title="Search">&#128269;</button>
-      <button class="icon-btn" title="Favorites">&#9825;</button>
-      <button class="icon-btn" title="cart">&#128722;</button>
-      <button class="icon-btn" title="Account">&#128100;</button>
+      <button class="icon-btn" title="Search"><i class="fa fa-search"></i></bu tton>
+      <button class="icon-btn" title="Favorites"><i class="fa fa-heart"></i></button>
+      <button class="icon-btn" title="cart"><i class="fa fa-shopping-cart"></i></button>
+      <button class="icon-btn" title="Account"><i class="fa fa-user"></i></button>
     </div>
 
  </nav>
@@ -50,14 +51,17 @@
 
  <!-- Products -->
   <section id="products">
-    <h2>Our Candles</h2>
-    <div class="product-grid"></div>
+    <h2>Our Products</h2>
+    <div class="product-grid">
 
     <div class="product-card">
         <h3>Warm Amber</h3>
         <p>Amber, vainilla and sandalwood. Warmth for dark winter evenings</p>
         <p class="price">299 NOK</p>
-        <button>add to cart</button>        <button>add to favorite</button>
+        <div class="product-buttons">
+        <button class="add-to-cart-btn">Add to cart</button>
+        <button class="favorite-btn"><i class="fa fa-heart"></i></button>
+    </div>
     </div>
   </section>
 

@@ -23,6 +23,8 @@ body {
     font-family: Georgia, serif;
     font-size: 16px;
     line-height: 1.6;
+    border: solid;
+    border-color:#7C9A7E;
 }
 
 /* Top Banner */
@@ -119,7 +121,7 @@ body {
 
 #hero button {
     background-color: var(--terracotta);
-    color: white;
+    color:#7C9A7E;
     border: none;
     padding: 16px 48px;
     font-size: 14px;
@@ -129,4 +131,241 @@ body {
 
 #hero button:hover {
     background-color: var(--text);
+}
+
+/* OUR STORE */
+
+#story {
+    padding: 100px 60px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#story h2 {
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: var(--text-soft);
+}
+
+#story p {
+    font-size: 17px;
+    color: var(--text-soft);
+    margin-bottom: 20px;
+    line-height: 1.9;
+}
+
+/* PRODUCTS */
+
+#products {
+    padding: 100px 60px;
+    background-color: var(--beige-dark);
+    text-align: center;
+}
+
+#products h2 {
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    color: var(--text);
+}
+
+.product-grid {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: var(--beige);
+    padding: 40px 32px;
+    width: 300px;
+    text-align: left;
+    border: solid;
+    border-color:#7C9A7E;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    color: var(--text);
+}
+
+.product-card p {
+    font-size: 15px;
+    color: var(--text-soft);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.price {
+    font-size: 18px;
+    color: var(--terracotta);
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+/* PURE MATERIALS */
+
+#natural {
+    padding: 100px 60px;
+    text-align: center;
+}
+
+#natural h2 {
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    color: var(--text);
+}
+
+#natural ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+#natural li {
+    background-color: var(--beige-dark);
+    padding: 12px 24px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: var(--text-soft);
+}
+
+/* CONTACT */
+
+#contact {
+    padding: 100px 60px;
+    background-color: var(--beige-dark);
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    color: var(--text);
+}
+
+#contact p {
+    font-size: 16px;
+    color: var(--text-soft);
+    margin-bottom: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 48px 60px;
+    background-color: var(--text);
+    color: var(--beige);
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: var(--beige-dark);
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 32px,
+}
+
+footer a {
+    color: var(--beige-dark);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+footer a:hover {
+    color: var(--terracotta);
+}
+
+/* fix favorite button */
+
+.product-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 20px;
+    color: var(--terracota);
+}
+
+.add-to-cart-btn {
+    background-color: var(--sage);
+    color: var(--beige);
+    border: solid;
+    padding: 14px 32px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    flex: 1;
+    white-space: nowrap;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--terracota);
+}
+
+/* fix nav icons color */
+
+.icon-btn {
+    color: var(--text);
+    filter: none;
+}
+
+/* fix footer links */
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 16px;
+}
+
+footer li {
+    list-style: none;
+}
+
+fotter a {
+    color: var(--beige-dark);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+footer a:hover {
+    color: var(--terracotta);
+}
+
+.favorite-btn {
+    background-color: none;
+    border: 1 px solid var(--text-soft);
+    color: var(--text);
+    padding: 14px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.favorite-btn:hover {
+    border-color: var(--terracotta);
+    color: var(--terracotta);
 }
