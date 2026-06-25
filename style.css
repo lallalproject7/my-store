@@ -18,13 +18,17 @@
 }
 
 body {
-    background-color: var (--beige);
+    background-color: var(--beige);
     color: var(--text);
-    font-family: Georgia, serif;
+    font-family: 'Jost', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     border: solid;
     border-color:#7C9A7E;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
 }
 
 /* Top Banner */
@@ -46,32 +50,35 @@ body {
     align-items: center;
     padding: 20px 60px;
     background-color: var(--beige);
-    border-bottom: 1px solid var(--beige-dark);
+    border-bottom: 1px var(--sage);
 }
 
 .nav-logo a {
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 4px;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 8px;
     color: var(--tex);
     text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 40px;
+    text-decoration: underline;
 }
 
 .nav-links a {
-    color: var(--text);
+    color: var(--sage);
     text-decoration: none;
     font-size: 14px;
     letter-spacing: 1 px;
 }
 
 .nav-links a:hover {
-    color: var(--terracotta);
+    color: var(--terracota);
 }
 
 .nav-icons {
@@ -96,7 +103,7 @@ body {
 #hero {
     text-align: center;
     padding: 120px 60px;
-    background-color: var(--beige);
+    background-color: var(--beige-dark);
 }
 
 #hero h1 {
@@ -120,17 +127,22 @@ body {
 }
 
 #hero button {
-    background-color: var(--terracotta);
-    color:#7C9A7E;
-    border: none;
+    background-color: transparent;
+    color: var(--sage);
+    border: 1px solid var(--text);
     padding: 16px 48px;
-    font-size: 14px;
-    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 3px;
     cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    text-transform: uppercase;
+    margin-top: 16px;
 } 
 
 #hero button:hover {
-    background-color: var(--text);
+    background-color: var(--sage);
+    color: var(--text)
 }
 
 /* OUR STORE */
@@ -140,6 +152,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    background-color: var(--beige);
 }
 
 #story h2 {
