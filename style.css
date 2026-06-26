@@ -84,6 +84,7 @@ h1, h2, h3 {
 .nav-icons {
     display: flex;
     gap: 16px;
+    background-color: transparent;
 }
 
 .icon-btn {
@@ -112,15 +113,18 @@ h1, h2, h3 {
 
 #hero h1 {
     font-size: 48px;
-    font-weight: normal;
+    font-weight: 500;
+    text-shadow: 0px, 0px, 0px, rgba(0, 0, 0, 0.9);
     letter-spacing: 2px;
     margin-bottom: 24px;
     color: var(--sage);
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
-    -webkit-text-stroke: 0.2px rgba(0, 0, 0, 0.6);
+    -webkit-text-stroke: 0.2px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 8px 20px;
 }
 
 #hero p {
@@ -207,6 +211,8 @@ h1, h2, h3 {
     text-align: left;
     border: solid;
     border-color:#7C9A7E;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card h3 {
@@ -222,6 +228,15 @@ h1, h2, h3 {
     color: var(--text-soft);
     margin-bottom: 20px;
     line-height: 1.7;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin-bottom: 20px;
 }
 
 .price {
@@ -378,7 +393,7 @@ footer a:hover {
 }
 
 .favorite-btn {
-    background-color: none;
+    background-color: transparent;
     border: 1 px solid var(--text-soft);
     color: var(--text);
     padding: 14px 20px;
