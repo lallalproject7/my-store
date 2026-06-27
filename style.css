@@ -50,7 +50,7 @@ h1, h2, h3 {
     align-items: center;
     padding: 20px 60px;
     background-color: var(--beige);
-    border-bottom: 1px var(--sage);
+    border-bottom: 1px solid var(--sage);
 }
 
 .nav-logo a {
@@ -405,4 +405,45 @@ footer a:hover {
 .favorite-btn:hover {
     border-color: var(--terracotta);
     color: var(--terracotta);
+}
+
+/* Legal Pages */
+.legal-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 120px 60px 80px 60px;
+}
+
+.legal-page h1 {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.legal-updated {
+  color: var(--text-soft);
+  font-size: 14px;
+  margin-bottom: 48px;
+  font-style: italic;
+}
+
+.legal-page h2 {
+  font-size: 22px;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.legal-page p,
+.legal-page li {
+  color: var(--text-soft);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.legal-page ul {
+  padding-left: 24px;
+}
+
+.legal-page a {
+  color: var(--terracotta);
+  text-decoration: underline;
 }
