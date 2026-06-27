@@ -57,7 +57,7 @@ h1, h2, h3 {
     font-size: 24px;
     font-weight: 300;
     letter-spacing: 8px;
-    color: var(--tex);
+    color: var(--text);
     text-decoration: none;
     font-family: 'Cormorant Garamond', serif;
     text-transform: uppercase;
@@ -96,7 +96,7 @@ h1, h2, h3 {
 }
 
 .icon-btn:hover {
-    color: var(--terracotta);
+    color: var(--terracota);
 }
 
 /* hero */
@@ -241,7 +241,7 @@ h1, h2, h3 {
 
 .price {
     font-size: 18px;
-    color: var(--terracotta);
+    color: var(--terracota);
     font-weight: bold;
     margin-bottom: 24px;
 }
@@ -312,15 +312,7 @@ footer p {
     font-size: 14px;
     letter-spacing: 1px;
     margin-bottom: 20px;
-    color: var(--beige-dark);
-}
-
-footer ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 32px,
-    
+    color: var(--beige-dark);  
 }
 
 footer a {
@@ -331,7 +323,7 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--terracotta);
+    color: var(--terracota);
 }
 
 /* fix favorite button */
@@ -381,7 +373,7 @@ footer li {
     list-style: none;
 }
 
-fotter a {
+footer a {
     color: var(--beige-dark);
     text-decoration: none;
     font-size: 13px;
@@ -389,12 +381,12 @@ fotter a {
 }
 
 footer a:hover {
-    color: var(--terracotta);
+    color: var(--terracota);
 }
 
 .favorite-btn {
     background-color: transparent;
-    border: 1 px solid var(--text-soft);
+    border: 1spx solid var(--text-soft);
     color: var(--text);
     padding: 14px 20px;
     font-size: 16px;
@@ -444,6 +436,6 @@ footer a:hover {
 }
 
 .legal-page a {
-  color: var(--terracotta);
+  color: var(--terracota);
   text-decoration: underline;
 }
