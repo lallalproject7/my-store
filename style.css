@@ -93,6 +93,7 @@ h1, h2, h3 {
     font-size: 18px;
     cursor: pointer;
     color: var(--text);
+    position: relative;
 }
 
 .icon-btn:hover {
@@ -352,13 +353,6 @@ footer a:hover {
     background-color: var(--terracota);
 }
 
-/* fix nav icons color */
-
-.icon-btn {
-    color: var(--text);
-    filter: none;
-}
-
 /* fix footer links */
 
 footer ul {
@@ -395,8 +389,8 @@ footer a:hover {
 }
 
 .favorite-btn:hover {
-    border-color: var(--terracotta);
-    color: var(--terracotta);
+    border-color: var(--terracota);
+    color: var(--terracota);
 }
 
 /* Ingredients */
@@ -544,7 +538,7 @@ footer a:hover {
 }
 
 .checkout-btn:hover {
-    background-color: var(--terracotta);
+    background-color: var(--terracota);
 }
 
 .cart-open {
@@ -553,4 +547,35 @@ footer a:hover {
 
 .overlay-open {
     display: block;
+}
+
+/* Remove button in cart */
+.remove-btn {
+    background: none;
+    border: none;
+    color: var(--text-soft);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.remove-btn:hover {
+    color: var(--terracota);
+}
+
+/* Cart counter badge */
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--terracota);
+    color: white;
+    font-size: 11px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Jost', sans-serif;
 }
