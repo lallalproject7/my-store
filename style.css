@@ -649,3 +649,38 @@ footer a:hover {
     font-weight: bold;
     font-style: normal;
 }
+
+/* Cart item controls */
+.cart-item {
+    cursor: pointer;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty-btn {
+    background: none;
+    border: 1px solid var(--text-soft);
+    color: var(--text);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-btn:hover {
+    border-color: var(--terracotta);
+    color: var(--terracotta);
+}
+
+.qty {
+    font-size: 14px;
+    min-width: 20px;
+    text-align: center;
+}

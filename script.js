@@ -52,16 +52,24 @@ function showProducts() {
 
 // Add product to cart
 function addToCart(index) {
-    let product = products[index]
-    cart.push(product)
+    let existing = cart.find(item => item.index === index)
+    if (existing) {
+        existing.quantity++
+    } else {
+        let product = products[index]
+        cart.push({ ...product, index: index, quantity: 1 })
+    }
     updateCounter()
     console.log("Cart:", cart)
 }
 
 // Update cart icon counter
 function updateCounter() {
-    let counter = document.querySelector(".cart-count")
-    counter.textContent = cart.length
+    let total = 0
+    for (let i = 0; i < cart.length; i++) {
+        total += cart[i].quantity
+    }
+    document.querySelector(".cart-count").textContent = total
 }
 
 // Open cart panel
@@ -85,23 +93,39 @@ function renderCart() {
 
     if (cart.length === 0) {
         cartItems.innerHTML = "<p>Your cart is empty.</p>"
+        document.querySelector(".cart-total span").textContent = "0 NOK"
         return
     }
 
     for (let i = 0; i < cart.length; i++) {
         let item = cart[i]
-        total += item.price
+        total += item.price * item.quantity
 
         cartItems.innerHTML += `
-            <div class="cart-item">
+            <div class="cart-item" onclick="window.location.href='product.html?id=${item.index}'">
                 <p>${item.name}</p>
-                <span>${item.price} NOK</span>
-                <button class="remove-btn" onclick="removeFromCart(${i})">✕</button>
+                <div class="cart-item-controls">
+                    <button class="qty-btn" onclick="event.stopPropagation(); changeQty(${i}, -1)">−</button>
+                    <span class="qty">${item.quantity}</span>
+                    <button class="qty-btn" onclick="event.stopPropagation(); changeQty(${i}, 1)">+</button>
+                </div>
+                <span>${item.price * item.quantity} NOK</span>
+                <button class="remove-btn" onclick="event.stopPropagation(); removeFromCart(${i})">✕</button>
             </div>
         `
     }
 
     document.querySelector(".cart-total span").textContent = total + " NOK"
+}
+
+// Change quantity
+function changeQty(index, change) {
+    cart[index].quantity += change
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1)
+    }
+    updateCounter()
+    renderCart()
 }
 
 // Remove item from cart
