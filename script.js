@@ -26,6 +26,9 @@ let products = [
 // Empty cart
 let cart = []
 
+// Empty favorites
+let favorites = []
+
 // Generate product cards automatically
 function showProducts() {
     let container = document.querySelector(".product-grid")
@@ -33,6 +36,7 @@ function showProducts() {
 
     for (let i = 0; i < products.length; i++) {
         let product = products[i]
+        let isFav = favorites.includes(i)
 
         container.innerHTML += `
             <div class="product-card" onclick="window.location.href='product.html?id=${i}'">
@@ -43,7 +47,7 @@ function showProducts() {
                 <p class="price">${product.price} NOK</p>
                 <div class="product-buttons">
                     <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(${i})">Add to cart</button>
-                    <button class="favorite-btn" onclick="event.stopPropagation()"><i class="fa fa-heart"></i></button>
+                    <button class="favorite-btn ${isFav ? 'active' : ''}" onclick="event.stopPropagation(); toggleFavorite(${i})"><i class="fa fa-heart"></i></button>
                 </div>
             </div>
         `
@@ -144,6 +148,55 @@ function removeFromCart(index) {
     cart.splice(index, 1)
     updateCounter()
     renderCart()
+}
+
+// Toggle favorite
+function toggleFavorite(index) {
+    let pos = favorites.indexOf(index)
+    if (pos === -1) {
+        favorites.push(index)
+    } else {
+        favorites.splice(pos, 1)
+    }
+    showProducts()
+}
+
+// Open favorites panel
+function openFavorites() {
+    document.querySelector(".favorites-panel").classList.add("cart-open")
+    document.querySelector(".favorites-overlay").classList.add("overlay-open")
+    renderFavorites()
+}
+
+// Close favorites panel
+function closeFavorites() {
+    document.querySelector(".favorites-panel").classList.remove("cart-open")
+    document.querySelector(".favorites-overlay").classList.remove("overlay-open")
+}
+
+// Show favorites in panel
+function renderFavorites() {
+    let container = document.querySelector(".favorites-items")
+    container.innerHTML = ""
+
+    if (favorites.length === 0) {
+        container.innerHTML = "<p>No favorites yet.</p>"
+        return
+    }
+
+    for (let i = 0; i < favorites.length; i++) {
+        let index = favorites[i]
+        let product = products[index]
+
+        container.innerHTML += `
+            <div class="cart-item" onclick="window.location.href='product.html?id=${index}'">
+                <img src="${product.image}" alt="${product.name}" style="width:60px;height:60px;object-fit:cover;">
+                <p>${product.name}</p>
+                <span>${product.price} NOK</span>
+                <button class="remove-btn" onclick="event.stopPropagation(); toggleFavorite(${index}); renderFavorites()">✕</button>
+            </div>
+        `
+    }
 }
 
 // When page loads, show products

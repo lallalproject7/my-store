@@ -30,7 +30,7 @@
 
     <div class="nav-icons">
       <button class="icon-btn" title="Search"><i class="fa fa-search"></i></button>
-      <button class="icon-btn" title="Favorites"><i class="fa fa-heart"></i></button>
+      <button class="icon-btn" title="Favorites" onclick="openFavorites()"><i class="fa fa-heart"></i></button>
       <button class="icon-btn" title="cart" onclick="openCart()">
     <i class="fa fa-shopping-cart"></i>
     <span class="cart-count">0</span>
@@ -90,6 +90,16 @@
         <li><a href="privacy.html">Personvern</a></li>
     </ul>
    </footer>
+
+   <!-- Favorites Panel -->
+<div class="favorites-overlay" onclick="closeFavorites()"></div>
+<div class="favorites-panel">
+    <div class="cart-header">
+        <h2>Favorites</h2>
+        <button class="close-cart" onclick="closeFavorites()">✕</button>
+    </div>
+    <div class="favorites-items"></div>
+</div>
 
    <!-- Cart Panel -->
 <div class="cart-overlay" onclick="closeCart()"></div>

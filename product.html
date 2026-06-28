@@ -22,7 +22,7 @@
     </ul>
     <div class="nav-icons">
         <button class="icon-btn" title="Search"><i class="fa fa-search"></i></button>
-        <button class="icon-btn" title="Favorites"><i class="fa fa-heart"></i></button>
+        <button class="icon-btn" title="Favorites" onclick="openFavorites()"><i class="fa fa-heart"></i></button>
         <button class="icon-btn" title="cart" onclick="openCart()">
             <i class="fa fa-shopping-cart"></i>
             <span class="cart-count">0</span>
@@ -42,9 +42,20 @@
         <p id="product-ingredients"></p>
         <p id="product-price"></p>
         <button class="add-to-cart-btn" onclick="addToCart()">Add to cart</button>
+        <button class="favorite-btn" onclick="toggleFavorite(currentIndex); updateFavoriteBtn()"><i class="fa fa-heart"></i></button>
         <a href="index.html#products" class="back-link">← Back to shop</a>
     </div>
 </section>
+
+<!-- Favorites Panel -->
+<div class="favorites-overlay" onclick="closeFavorites()"></div>
+<div class="favorites-panel">
+    <div class="cart-header">
+        <h2>Favorites</h2>
+        <button class="close-cart" onclick="closeFavorites()">✕</button>
+    </div>
+    <div class="favorites-items"></div>
+</div>
 
 <!-- Cart Panel -->
 <div class="cart-overlay" onclick="closeCart()"></div>
@@ -59,6 +70,8 @@
         <button class="checkout-btn">Checkout</button>
     </div>
 </div>
+
+<div id="notification"></div>
 
 <script src="script.js"></script>
 <script src="product.js"></script>

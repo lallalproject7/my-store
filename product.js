@@ -4,6 +4,17 @@ let id = parseInt(params.get("id"))
 
 // Get product from array
 let currentProduct = products[id]
+let currentIndex = id
+
+// Update favorite button color
+function updateFavoriteBtn() {
+    let btn = document.querySelector(".favorite-btn")
+    if (favorites.includes(currentIndex)) {
+        btn.classList.add("active")
+    } else {
+        btn.classList.remove("active")
+    }
+}
 
 // Show product details on page
 document.getElementById("product-image").src = currentProduct.image
@@ -20,3 +31,6 @@ function addToCart() {
     updateCounter()
     console.log("Cart:", cart)
 }
+
+// Check if already favorite when page loads
+updateFavoriteBtn()
