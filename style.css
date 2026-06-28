@@ -684,3 +684,22 @@ footer a:hover {
     min-width: 20px;
     text-align: center;
 }
+
+/* Notification */
+#notification {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background-color: var(--text);
+    color: var(--beige);
+    padding: 16px 24px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 200;
+}
+
+#notification.show {
+    opacity: 1;
+}

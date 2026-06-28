@@ -60,7 +60,18 @@ function addToCart(index) {
         cart.push({ ...product, index: index, quantity: 1 })
     }
     updateCounter()
+    showNotification(products[index].name)
     console.log("Cart:", cart)
+}
+
+// Show notification
+function showNotification(name) {
+    let notification = document.getElementById("notification")
+    notification.textContent = name + " added to cart"
+    notification.classList.add("show")
+    setTimeout(() => {
+        notification.classList.remove("show")
+    }, 2000)
 }
 
 // Update cart icon counter
