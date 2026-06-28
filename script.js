@@ -1,28 +1,48 @@
-// Productos de RENFLAMME
-let productos = [
-    { nombre: "Nordic Pine", precio: 299, imagen: "images/ionela-mat-09N3Du664dw-unsplash.jpg" },
-    { nombre: "Arctic Bloom", precio: 319, imagen: "images/ionela-mat-36E87eXEOns-unsplash.jpg" },
-    { nombre: "Warm Amber", precio: 299, imagen: "images/ionela-mat-ZG7raWjUTmw-unsplash.jpg" }
+// RENFLAMME Products
+let products = [
+    { 
+        name: "Nordic Pine", 
+        price: 299, 
+        description: "Pine, cedarwood and fresh air. The scent of a Norwegian forest.",
+        ingredients: "Soy wax, cedarwood essential oil, pine essential oil, cotton wick",
+        image: "images/ionela-mat-09N3Du664dw-unsplash.jpg" 
+    },
+    { 
+        name: "Arctic Bloom", 
+        price: 319, 
+        description: "Wild flowers and moss. The brief, beautiful Norwegian summer.",
+        ingredients: "Coconut wax, wildflower essential oil, moss extract, cotton wick",
+        image: "images/ionela-mat-36E87eXEOns-unsplash.jpg" 
+    },
+    { 
+        name: "Warm Amber", 
+        price: 299, 
+        description: "Amber, vanilla and sandalwood. Warmth for dark winter evenings.",
+        ingredients: "Soy wax, amber essential oil, vanilla extract, sandalwood oil, cotton wick",
+        image: "images/ionela-mat-ZG7raWjUTmw-unsplash.jpg" 
+    }
 ]
 
-// Carrito vacío
-let carrito = []
+// Empty cart
+let cart = []
 
-// Crear las tarjetas de productos automáticamente
-function mostrarProductos() {
-    let contenedor = document.querySelector(".product-grid")
-    contenedor.innerHTML = ""
+// Generate product cards automatically
+function showProducts() {
+    let container = document.querySelector(".product-grid")
+    container.innerHTML = ""
 
-    for (let i = 0; i < productos.length; i++) {
-        let producto = productos[i]
+    for (let i = 0; i < products.length; i++) {
+        let product = products[i]
 
-        contenedor.innerHTML += `
+        container.innerHTML += `
             <div class="product-card">
-                <img src="${producto.imagen}" alt="${producto.nombre}">
-                <h3>${producto.nombre}</h3>
-                <p class="price">${producto.precio} NOK</p>
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <p class="ingredients"><strong>Ingredients:</strong> ${product.ingredients}</p>
+                <p class="price">${product.price} NOK</p>
                 <div class="product-buttons">
-                    <button class="add-to-cart-btn" onclick="agregarAlCarrito(${i})">Add to cart</button>
+                    <button class="add-to-cart-btn" onclick="addToCart(${i})">Add to cart</button>
                     <button class="favorite-btn"><i class="fa fa-heart"></i></button>
                 </div>
             </div>
@@ -30,19 +50,19 @@ function mostrarProductos() {
     }
 }
 
-// Agrega producto al carrito
-function agregarAlCarrito(indice) {
-    let producto = productos[indice]
-    carrito.push(producto)
-    actualizarContador()
-    console.log("Carrito:", carrito)
+// Add product to cart
+function addToCart(index) {
+    let product = products[index]
+    cart.push(product)
+    updateCounter()
+    console.log("Cart:", cart)
 }
 
-// Actualiza el número en el ícono del carrito
-function actualizarContador() {
-    let contador = document.querySelector(".cart-count")
-    contador.textContent = carrito.length
+// Update cart icon counter
+function updateCounter() {
+    let counter = document.querySelector(".cart-count")
+    counter.textContent = cart.length
 }
 
-// Cuando la página carga, muestra los productos
-mostrarProductos()
+// When page loads, show products
+showProducts()
