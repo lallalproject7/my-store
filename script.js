@@ -35,15 +35,15 @@ function showProducts() {
         let product = products[i]
 
         container.innerHTML += `
-            <div class="product-card">
+            <div class="product-card" onclick="window.location.href='product.html?id=${i}'">
                 <img src="${product.image}" alt="${product.name}">
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
                 <p class="ingredients"><strong>Ingredients:</strong> ${product.ingredients}</p>
                 <p class="price">${product.price} NOK</p>
                 <div class="product-buttons">
-                    <button class="add-to-cart-btn" onclick="addToCart(${i})">Add to cart</button>
-                    <button class="favorite-btn"><i class="fa fa-heart"></i></button>
+                    <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(${i})">Add to cart</button>
+                    <button class="favorite-btn" onclick="event.stopPropagation()"><i class="fa fa-heart"></i></button>
                 </div>
             </div>
         `

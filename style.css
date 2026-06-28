@@ -340,13 +340,15 @@ footer a:hover {
 .add-to-cart-btn {
     background-color: var(--sage);
     color: var(--beige);
-    border: solid;
-    padding: 14px 32px;
-    font-size: 13px;
+    border: none;
+    padding: 16px 32px;
+    font-size: 14px;
     letter-spacing: 2px;
     cursor: pointer;
-    flex: 1;
-    white-space: nowrap;
+    font-family: 'Jost', sans-serif;
+    text-transform: uppercase;
+    width: auto;
+    display: inline-block;
 }
 
 .add-to-cart-btn:hover {
@@ -578,4 +580,72 @@ footer a:hover {
     align-items: center;
     justify-content: center;
     font-family: 'Jost', sans-serif;
+}
+
+/* Product Detail Page */
+.product-detail {
+    display: flex;
+    gap: 60px;
+    padding: 120px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.product-detail-image {
+    flex: 1;
+}
+
+.product-detail-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.product-detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.product-detail-info h1 {
+    font-size: 48px;
+    font-weight: normal;
+    letter-spacing: 3px;
+}
+
+.product-detail-info p {
+    font-size: 16px;
+    color: var(--text-soft);
+    line-height: 1.8;
+}
+
+#product-price {
+    font-size: 28px;
+    color: var(--terracotta);
+    font-weight: bold;
+}
+
+.back-link {
+    color: var(--text-soft);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 16px;
+}
+
+.back-link:hover {
+    color: var(--terracotta);
+}
+
+#product-ingredients {
+    font-size: 14px;
+    color: var(--text-soft);
+    font-style: italic;
+}
+
+#product-ingredients::before {
+    content: "Ingredients: ";
+    font-weight: bold;
+    font-style: normal;
 }

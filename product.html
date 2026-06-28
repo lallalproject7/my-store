@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - RENFLAMME</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-logo">
+        <a href="index.html">RENFLAMME</a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html#story">Our Story</a></li>
+        <li><a href="index.html#products">Shop</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+        <button class="icon-btn" title="Search"><i class="fa fa-search"></i></button>
+        <button class="icon-btn" title="Favorites"><i class="fa fa-heart"></i></button>
+        <button class="icon-btn" title="cart" onclick="openCart()">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </button>
+        <button class="icon-btn" title="Account"><i class="fa fa-user"></i></button>
+    </div>
+</nav>
+
+<!-- Product Detail -->
+<section class="product-detail">
+    <div class="product-detail-image">
+        <img id="product-image" src="" alt="">
+    </div>
+    <div class="product-detail-info">
+        <h1 id="product-name"></h1>
+        <p id="product-description"></p>
+        <p id="product-ingredients"></p>
+        <p id="product-price"></p>
+        <button class="add-to-cart-btn" onclick="addToCart()">Add to cart</button>
+        <a href="index.html#products" class="back-link">← Back to shop</a>
+    </div>
+</section>
+
+<!-- Cart Panel -->
+<div class="cart-overlay" onclick="closeCart()"></div>
+<div class="cart-panel">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button class="close-cart" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+        <p class="cart-total">Total: <span>0 NOK</span></p>
+        <button class="checkout-btn">Checkout</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script src="product.js"></script>
+</body>
+</html>
