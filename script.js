@@ -22,10 +22,27 @@ function mostrarProductos() {
                 <h3>${producto.nombre}</h3>
                 <p class="price">${producto.precio} NOK</p>
                 <div class="product-buttons">
-                    <button class="add-to-cart-btn" onclick="agregarAlCarrito('${producto.nombre}', ${producto.precio})">Add to cart</button>
+                    <button class="add-to-cart-btn" onclick="agregarAlCarrito(${i})">Add to cart</button>
                     <button class="favorite-btn"><i class="fa fa-heart"></i></button>
                 </div>
             </div>
         `
     }
 }
+
+// Agrega producto al carrito
+function agregarAlCarrito(indice) {
+    let producto = productos[indice]
+    carrito.push(producto)
+    actualizarContador()
+    console.log("Carrito:", carrito)
+}
+
+// Actualiza el número en el ícono del carrito
+function actualizarContador() {
+    let contador = document.querySelector(".cart-count")
+    contador.textContent = carrito.length
+}
+
+// Cuando la página carga, muestra los productos
+mostrarProductos()
