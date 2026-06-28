@@ -31,7 +31,7 @@
     <div class="nav-icons">
       <button class="icon-btn" title="Search"><i class="fa fa-search"></i></button>
       <button class="icon-btn" title="Favorites"><i class="fa fa-heart"></i></button>
-      <button class="icon-btn" title="cart">
+      <button class="icon-btn" title="cart" onclick="openCart()">
     <i class="fa fa-shopping-cart"></i>
     <span class="cart-count">0</span>
 </button>
@@ -90,6 +90,21 @@
         <li><a href="privacy.html">Personvern</a></li>
     </ul>
    </footer>
+
+   <!-- Cart Panel -->
+<div class="cart-overlay" onclick="closeCart()"></div>
+<div class="cart-panel">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button class="close-cart" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+        <p class="cart-total">Total: <span>0 NOK</span></p>
+        <button class="checkout-btn">Checkout</button>
+    </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>

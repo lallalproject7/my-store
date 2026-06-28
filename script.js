@@ -64,5 +64,52 @@ function updateCounter() {
     counter.textContent = cart.length
 }
 
+// Open cart panel
+function openCart() {
+    document.querySelector(".cart-panel").classList.add("cart-open")
+    document.querySelector(".cart-overlay").classList.add("overlay-open")
+    renderCart()
+}
+
+// Close cart panel
+function closeCart() {
+    document.querySelector(".cart-panel").classList.remove("cart-open")
+    document.querySelector(".cart-overlay").classList.remove("overlay-open")
+}
+
+// Show cart items in panel
+function renderCart() {
+    let cartItems = document.querySelector(".cart-items")
+    let total = 0
+    cartItems.innerHTML = ""
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = "<p>Your cart is empty.</p>"
+        return
+    }
+
+    for (let i = 0; i < cart.length; i++) {
+        let item = cart[i]
+        total += item.price
+
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <p>${item.name}</p>
+                <span>${item.price} NOK</span>
+                <button class="remove-btn" onclick="removeFromCart(${i})">✕</button>
+            </div>
+        `
+    }
+
+    document.querySelector(".cart-total span").textContent = total + " NOK"
+}
+
+// Remove item from cart
+function removeFromCart(index) {
+    cart.splice(index, 1)
+    updateCounter()
+    renderCart()
+}
+
 // When page loads, show products
 showProducts()
